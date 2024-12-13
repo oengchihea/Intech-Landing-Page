@@ -1,0 +1,30 @@
+.image-container {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+  
+  .transform-image {
+    animation: transformImage 3s infinite alternate;
+  }
+  
+  @keyframes transformImage {
+    0% {
+      transform: scale(1);
+      filter: brightness(1);
+    }
+    50% {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+    100% {
+      transform: scale(1);
+      filter: brightness(1);
+    }
+  }
+  
+  .image-container:hover .transform-image {
+    animation-play-state: paused;
+  }
+  
+  

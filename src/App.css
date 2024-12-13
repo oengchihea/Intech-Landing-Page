@@ -1,0 +1,100 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import './styles/animations.css';
+
+.bg-hero-gradient {
+  background: linear-gradient(135deg, #00b1ec 0%, #f0fcff 100%  50%) ;
+}
+
+.bg-cta-gradient {
+  background: linear-gradient(to bottom, #fff5f2 0%, #fff9f5 100%);
+}
+
+.bg-about-bg {
+  background-color: #e0f7ff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+.bg-primary {
+  background-color: #ffa726;
+}
+
+.bg-primary-dark {
+  background-color: #ff9800;
+}
+
+.bg-secondary {
+  background-color: #ffe0b2;
+}
+
+.bg-secondary-light {
+  background-color: #ffcc80;
+}
+
+.solution-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.solution-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.2) 40%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.2) 60%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  transform: rotate(30deg);
+  transition: transform 0.5s ease-out;
+}
+
+.solution-card.animate-reflection::before {
+  transform: rotate(30deg) translate(0, 0);
+  animation: reflectionAnimation 2s ease-in-out;
+}
+
+@keyframes reflectionAnimation {
+  0% {
+    transform: rotate(30deg) translate(-100%, -100%);
+  }
+  100% {
+    transform: rotate(30deg) translate(100%, 100%);
+  }
+}
